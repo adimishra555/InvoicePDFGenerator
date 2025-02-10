@@ -37,7 +37,6 @@ class ProductDB(models.Model):
     def __str__(self):
         return f"{self.product_title} - {self.price}"
 
-
 class OrderDB(models.Model):
     order_id = models.CharField(max_length=100, unique=True)
     user = models.ForeignKey(UserDB, on_delete=models.CASCADE)
