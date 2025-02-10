@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - {{ order_id }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 600px; margin: auto; border: 1px solid #ddd; padding: 20px; }
+        h2 { text-align: center; color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Invoice</h2>
+        <p><strong>Order ID:</strong> {{ order_id }}</p>
+        <p><strong>Customer:</strong> {{ username }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Phone:</strong> {{ phone }}</p>
+        <p><strong>Address:</strong> {{ address }}</p>
+
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Brand</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>{{ product_title }}</td>
+                <td>{{ brand }}</td>
+                <td>{{ quantity }}</td>
+                <td>${{ price }}</td>
+                <td>${{ total_amount }}</td>
+            </tr>
+        </table>
+
+        <h3 style="text-align: right;">Grand Total: ${{ total_amount }}</h3>
+    </div>
+</body>
+</html>
