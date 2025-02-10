@@ -9,9 +9,6 @@ import datetime
 
 @api_view(["GET"])
 def invoice_template(request, order_id):
-    """
-    Render an HTML invoice template for a given order.
-    """
     try:
         order = get_object_or_404(OrderDB, order_id=order_id)
 
